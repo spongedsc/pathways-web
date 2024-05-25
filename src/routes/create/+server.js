@@ -14,7 +14,7 @@ export async function POST({ request }) {
     try {
         const result = await db.insert(memoriesTable).values({ content: content }).returning({ insertedId: memoriesTable.id });
 
-        return json({ id: result[0].insertedId });
+        return json({ id: result[0].insertedId }, { status: 200 });
 
     } catch (error) {
         console.error(error);
