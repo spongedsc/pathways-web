@@ -22,7 +22,7 @@ Example response:
 
 This ID can be used to access the markdown content via `/[id]`, which returns a HTML page.
 
-## Examples
+### Examples
 
 Using `curl`:
 
