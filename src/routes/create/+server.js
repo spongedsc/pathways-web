@@ -2,6 +2,7 @@ import { db } from '$lib/db';
 import { memoriesTable } from '$lib/schema';
 import { json } from '@sveltejs/kit';
 import { API_TOKEN } from "$env/static/private";
+import { nanoid } from 'nanoid';
 
 /** @type {import('./$types').RequestHandler} */
 export async function POST({ request }) {
@@ -12,7 +13,7 @@ export async function POST({ request }) {
     }
 
     try {
-        const result = await db.insert(memoriesTable).values({ content: content }).returning({ insertedId: memoriesTable.id });
+        const result = await db.insert(memoriesTable).values({ id: nanoid(10), content: content }).returning({ insertedId: memoriesTable.id });
 
         return json({ id: result[0].insertedId }, { status: 200 });
 

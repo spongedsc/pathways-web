@@ -1,0 +1,1 @@
+ALTER TABLE "memories_table" ALTER COLUMN "id" SET DATA TYPE varchar(10);
