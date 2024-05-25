@@ -4,6 +4,3 @@ export const memoriesTable = pgTable('memories_table', {
     id: serial('id').primaryKey(),
     content: text('content').notNull(),
 });
-
-const InsertMemories = memoriesTable.$inferInsert;
-const SelectMemories = memoriesTable.$inferSelect;
